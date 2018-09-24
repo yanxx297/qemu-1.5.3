@@ -52,7 +52,7 @@ static void exception_action(CPUArchState *env1)
 void cpu_resume_from_signal(CPUArchState *env1, void *puc)
 {
 #ifdef __linux__
-    struct ucontext_t *uc = puc;
+    ucontext_t *uc = puc;
 #elif defined(__OpenBSD__)
     struct sigcontext *uc = puc;
 #endif
